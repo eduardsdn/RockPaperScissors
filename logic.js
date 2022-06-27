@@ -1,6 +1,7 @@
-let array = ["rock","paper","scissors"];
+
 
 function computerPlay () {
+    let array = ["rock","paper","scissors"];
     let randomItem = array[Math.floor(Math.random()*array.length)];
     return randomItem
 }
@@ -16,11 +17,12 @@ function round() {
     || playerSelection == "scissors" && computerSelection == "paper" 
     || playerSelection == "paper" && computerSelection == "rock") {
         result = "You win!"
+        
     }
 
     else if (playerSelection == "rock" && computerSelection == "paper" 
     || playerSelection == "paper" && computerSelection == "scissors" 
-    ||playerSelection == "scissors" && computerSelection == "rock") {
+    || playerSelection == "scissors" && computerSelection == "rock") {
         result = "You loose!"
     }
 
@@ -30,16 +32,15 @@ function round() {
         result = "Draw!"
     }
 
-
-    /*else if (playerSelection != "rock" 
+    else if (playerSelection != "rock" 
     || playerSelection != "scissors"
     || playerSelection != "paper") {
         result = "Incorrect input!"
     }
-    */
-
-    console.log(computerSelection)
-    console.log(playerSelection)
+    
+    console.log(`New round begins!`)
+    console.log(`You pick: ${playerSelection}`)
+    console.log(`Opponent picks: ${computerSelection}`)
     return(result)
 
 }
@@ -69,6 +70,11 @@ function game() {
             i --
         }
 
+        else if (round_result == "Incorrect input!") {
+            console.log ("Incorrect input!")
+            i --
+        }
+
         if (w == 3) {
             final = "You win the game!"
             console.log(final)
@@ -81,7 +87,7 @@ function game() {
             break
         }
     }
+    
 }
-
 
 game()
