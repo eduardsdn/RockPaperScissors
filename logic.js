@@ -7,13 +7,11 @@ function computerPlay () {
 
 
 
-let playerSelection = prompt("Make yout choice")
-
-let computerSelection = computerPlay()
-
-function round(playerSelection, computerSelection) {
+function round() {
 
     let result 
+    let playerSelection = prompt("Make yout choice")
+    let computerSelection = computerPlay()
 
     if (playerSelection == "rock" && computerSelection == "scissors" 
     || playerSelection == "scissors" && computerSelection == "paper" 
@@ -33,15 +31,45 @@ function round(playerSelection, computerSelection) {
         result = "Draw!"
     }
 
-    else if (playerSelection != "rock" 
+    /*else if (playerSelection != "rock" 
     || playerSelection != "scissors"
     || playerSelection != "paper") {
         result = "Incorrect input!"
     }
-    
+    */
     return(result)
 }
 
+
+
+function game() {
+    let final 
+    let w = 0
+    let l = 0
+
+    for (let i = 0; i < 5; i++) {
+
+        round_result = round()
+
+        if (round_result == "You win!"){
+            w ++
+            console.log("You win a round!")
+        }
+
+        else if (round_result == "You loose!") {
+            l ++
+            console.log("You loose a round!")
+        }
+    }
+}
+
+
+
+
+
+
+game()
 console.log(playerSelection)
 console.log(computerSelection)
 console.log(round(playerSelection, computerSelection))
+console.log(game())
