@@ -6,7 +6,6 @@ function computerPlay () {
 }
 
 
-
 function round() {
 
     let result 
@@ -46,7 +45,6 @@ function round() {
 }
 
 
-
 function game() {
     let final 
     let w = 0
@@ -70,13 +68,20 @@ function game() {
             console.log("It's a draw!")
             i --
         }
+
+        if (w == 3) {
+            final = "You win the game!"
+            console.log(final)
+            break
+        }
+
+        else if (l ==3) {
+            final = "You loose the game!"
+            console.log(final)
+            break
+        }
     }
 }
 
 
-
-
-
-
 game()
-console.log(game())
