@@ -31,13 +31,18 @@ function round() {
         result = "Draw!"
     }
 
+
     /*else if (playerSelection != "rock" 
     || playerSelection != "scissors"
     || playerSelection != "paper") {
         result = "Incorrect input!"
     }
     */
+
+    console.log(computerSelection)
+    console.log(playerSelection)
     return(result)
+
 }
 
 
@@ -60,6 +65,11 @@ function game() {
             l ++
             console.log("You loose a round!")
         }
+
+        else if (round_result == "Draw!") {
+            console.log("It's a draw!")
+            i --
+        }
     }
 }
 
@@ -69,7 +79,4 @@ function game() {
 
 
 game()
-console.log(playerSelection)
-console.log(computerSelection)
-console.log(round(playerSelection, computerSelection))
 console.log(game())
