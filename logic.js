@@ -90,6 +90,6 @@ function game() {
     
 }
 
-game()
+//game()
 
 //d
