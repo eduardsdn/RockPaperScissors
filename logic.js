@@ -6,11 +6,33 @@ function computerPlay () {
     return randomItem
 }
 
+function playerSelects() {
+
+    let playerSelected
+    const rock = document.querySelector('.rock');
+    rock.addEventListener('click', function() {
+        playerSelected = "rock"
+    })
+
+    const paper = document.querySelector('.paper');
+    paper.addEventListener('click', function() {
+        playerSelected = "paper"
+    })
+
+    const scissors = document.querySelector('.scissors')
+    scissors.addEventListener('click', function() {
+        playerSelected = "scissors"
+    })
+
+    return playerSelected
+}
+
+
 
 function round() {
 
     let result 
-    let playerSelection = prompt("Make yout choice")
+    let playerSelection = playerSelects()
     let computerSelection = computerPlay()
 
     if (playerSelection == "rock" && computerSelection == "scissors" 
@@ -90,6 +112,6 @@ function game() {
     
 }
 
-//game()
+game()
 
-//d
+
