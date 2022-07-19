@@ -6,33 +6,33 @@ function computerPlay () {
     return randomItem
 }
 
-function playerSelects() {
 
-    let playerSelected
-    const rock = document.querySelector('.rock');
+function playerSelected () {
+    const rock = document.querySelector('.rock')
     rock.addEventListener('click', function() {
-        playerSelected = "rock"
-    })
+        selected = "rock"
+    } )
 
-    const paper = document.querySelector('.paper');
+    const paper = document.querySelector('.paper')
     paper.addEventListener('click', function() {
-        playerSelected = "paper"
+        selected = "paper"
     })
 
     const scissors = document.querySelector('.scissors')
-    scissors.addEventListener('click', function() {
-        playerSelected = "scissors"
-    })
-
-    return playerSelected
+    scissors.addEventListener('click', round)
 }
+
+
+
+
+
 
 
 
 function round() {
 
     let result 
-    let playerSelection = playerSelects()
+    let playerSelection = playerSelected()
     let computerSelection = computerPlay()
 
     if (playerSelection == "rock" && computerSelection == "scissors" 
@@ -75,24 +75,32 @@ function game() {
 
     for (let i = 0; i < 5; i++) {
 
-        round_result = round()
+        const rock = document.querySelector('.rock')
+        rock.addEventListener('click', round)
 
-        if (round_result == "You win!"){
+        const paper = document.querySelector('.paper')
+        paper.addEventListener('click', round)
+
+        const scissors = document.querySelector('.scissors')
+        scissors.addEventListener('click', round)
+
+
+        if (rock == "You win!"|| paper == "You win!" || scissors == "You win!"){
             w ++
             console.log("You win a round!")
         }
 
-        else if (round_result == "You loose!") {
+        else if (rock == "You loose!" || paper == "You loose!" || scissors == "You loose!") {
             l ++
             console.log("You loose a round!")
         }
 
-        else if (round_result == "Draw!") {
+        else if (rock == "Draw!" || paper == "Draw!" || scissors == "Draw!") {
             console.log("It's a draw!")
             i --
         }
 
-        else if (round_result == "Incorrect input!") {
+        else if (rock == "Incorrect input!" || paper == "Incorrect input!" || scissors == "Incorrect input!") {
             console.log ("Incorrect input!")
             i --
         }
