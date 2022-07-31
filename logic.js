@@ -1,5 +1,4 @@
 
-
 function computerPlay () {
     let array = ["rock","paper","scissors"];
     let randomItem = array[Math.floor(Math.random()*array.length)];
@@ -7,32 +6,10 @@ function computerPlay () {
 }
 
 
-function playerSelected () {
-    const rock = document.querySelector('.rock')
-    rock.addEventListener('click', function() {
-        selected = "rock"
-    } )
-
-    const paper = document.querySelector('.paper')
-    paper.addEventListener('click', function() {
-        selected = "paper"
-    })
-
-    const scissors = document.querySelector('.scissors')
-    scissors.addEventListener('click', round)
-}
-
-
-
-
-
-
-
-
 function round() {
 
     let result 
-    let playerSelection = playerSelected()
+    let playerSelection = prompt("Make yout choice")
     let computerSelection = computerPlay()
 
     if (playerSelection == "rock" && computerSelection == "scissors" 
@@ -75,32 +52,24 @@ function game() {
 
     for (let i = 0; i < 5; i++) {
 
-        const rock = document.querySelector('.rock')
-        rock.addEventListener('click', round)
+        round_result = round()
 
-        const paper = document.querySelector('.paper')
-        paper.addEventListener('click', round)
-
-        const scissors = document.querySelector('.scissors')
-        scissors.addEventListener('click', round)
-
-
-        if (rock == "You win!"|| paper == "You win!" || scissors == "You win!"){
+        if (round_result == "You win!"){
             w ++
             console.log("You win a round!")
         }
 
-        else if (rock == "You loose!" || paper == "You loose!" || scissors == "You loose!") {
+        else if (round_result == "You loose!") {
             l ++
             console.log("You loose a round!")
         }
 
-        else if (rock == "Draw!" || paper == "Draw!" || scissors == "Draw!") {
+        else if (round_result == "Draw!") {
             console.log("It's a draw!")
             i --
         }
 
-        else if (rock == "Incorrect input!" || paper == "Incorrect input!" || scissors == "Incorrect input!") {
+        else if (round_result == "Incorrect input!") {
             console.log ("Incorrect input!")
             i --
         }
@@ -121,5 +90,3 @@ function game() {
 }
 
 game()
-
-
