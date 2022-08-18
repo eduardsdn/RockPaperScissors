@@ -1,3 +1,13 @@
+let rock = document.querySelector('.rock')
+let paper = document.querySelector('.paper')
+let scissors = document.querySelector('.scissors')
+
+
+rock.addEventListener('click', round)
+paper.addEventListener('click', round)
+scissors.addEventListener('click', round)
+
+
 function computerPlay () {
     let array = ["rock","paper","scissors"];
     let randomItem = array[Math.floor(Math.random()*array.length)];
@@ -5,11 +15,24 @@ function computerPlay () {
 }
 
 
-function round() {
-
+function round(e) {
+    let targetElement = e.target
     let result 
-    let playerSelection = prompt("Make yout choice")
+    let playerSelection 
     let computerSelection = computerPlay()
+    
+    if (targetElement === rock){
+        playerSelection = "rock"
+    }
+    else if (targetElement === paper) {
+        playerSelection = "paper"
+    }
+    else if(targetElement === scissors) {
+        playerSelection = "scissors"
+    }
+    
+
+
 
     if (playerSelection == "rock" && computerSelection == "scissors" 
     || playerSelection == "scissors" && computerSelection == "paper" 
@@ -36,7 +59,7 @@ function round() {
         result = "Incorrect input!"
     }
     
-    console.log(`New round begins!`)
+    // console.log(`New round begins!`)
     console.log(`You pick: ${playerSelection}`)
     console.log(`Opponent picks: ${computerSelection}`)
     return(result)
@@ -44,48 +67,48 @@ function round() {
 }
 
 
-function game() {
-    let final 
-    let w = 0
-    let l = 0
+// function game() {
+//     let final 
+//     let w = 0
+//     let l = 0
 
-    for (let i = 0; i < 5; i++) {
+//     for (let i = 0; i < 5; i++) {
 
-        round_result = round()
+//         round_result = round()
 
-        if (round_result == "You win!"){
-            w ++
-            console.log("You win a round!")
-        }
+//         if (round_result == "You win!"){
+//             w ++
+//             console.log("You win a round!")
+//         }
 
-        else if (round_result == "You loose!") {
-            l ++
-            console.log("You loose a round!")
-        }
+//         else if (round_result == "You loose!") {
+//             l ++
+//             console.log("You loose a round!")
+//         }
 
-        else if (round_result == "Draw!") {
-            console.log("It's a draw!")
-            i --
-        }
+//         else if (round_result == "Draw!") {
+//             console.log("It's a draw!")
+//             i --
+//         }
 
-        else if (round_result == "Incorrect input!") {
-            console.log ("Incorrect input!")
-            i --
-        }
+//         else if (round_result == "Incorrect input!") {
+//             console.log ("Incorrect input!")
+//             i --
+//         }
 
-        if (w == 3) {
-            final = "You win the game!"
-            console.log(final)
-            break
-        }
+//         if (w == 3) {
+//             final = "You win the game!"
+//             console.log(final)
+//             break
+//         }
 
-        else if (l ==3) {
-            final = "You loose the game!"
-            console.log(final)
-            break
-        }
-    }
+//         else if (l ==3) {
+//             final = "You loose the game!"
+//             console.log(final)
+//             break
+//         }
+//     }
     
-}
+// }
 
-//game()
+// game()
